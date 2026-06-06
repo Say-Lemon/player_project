@@ -1,0 +1,27 @@
+# Align with Makefile (arm-linux-gcc) + ARM 5.4.0 sysroot on this machine
+CompileFlags:
+  Add:
+    - --target=arm-none-linux-gnueabi
+    - --sysroot=/usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/sysroot
+    - -isystem
+    - /usr/local/arm/5.4.0/usr/lib/gcc/arm-none-linux-gnueabi/5.4.0/include
+    - -isystem
+    - /usr/local/arm/5.4.0/usr/arm-none-linux-gnueabi/sysroot/usr/include
+    - -I/home/saylemon/workspace/learn/player_project
+    - -I/home/saylemon/workspace/learn/player_project/usrCode
+    - --std=gnu99
+    - -Wall
+
+Diagnostics:
+  UnusedIncludes: None
+  Suppress:
+    - pp_including_mainfile_in_preamble
+    - drv_unknown_argument
+
+---
+If:
+  PathMatch: usrCode/.*
+CompileFlags:
+  Add:
+    - -I..
+    - -I.

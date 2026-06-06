@@ -1,0 +1,22 @@
+{
+    "clangd.arguments": [
+        "--compile-commands-dir=${workspaceFolder}",
+        "--query-driver=**/arm-*-gcc*,**/arm-*-g++*",
+        "--background-index",
+        "--completion-style=detailed",
+        "--header-insertion=never"
+    ],
+    "clangd.pathMappings": [],
+    "files.associations": {
+        "evdev.h": "c",
+        "lv_examples.h": "c",
+        "lv_freetype.h": "c",
+        "lv_demos.h": "c",
+        "player_ui.h": "c"
+    },
+    "files.exclude": {
+        "**/lvgl/tests/**": true,
+        "**/lvgl/examples/**": true,
+        "**/lvgl/docs/**": true
+    }
+}
